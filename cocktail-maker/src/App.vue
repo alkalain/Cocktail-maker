@@ -1,11 +1,12 @@
 <script setup>
+// eslint-disable-next-line no-unused-vars
 import { RouterLink, RouterView } from 'vue-router'
 import CocktailNavView from './views/CocktailNavView.vue'
 </script>
 
 <template>
   <header class="flex items-center">
-    <div class="grid h w-screen items-center bg-yellow-700 max-[767]:grid-rows-2 md:grid-cols-2">
+    <div class="max-[767]:grid-rows-2 grid w-screen items-center bg-yellow-700 md:grid-cols-2">
       <div class="flex justify-start">
         <h1 class="font-['Italianno'] text-8xl text-white md:text-8xl">Cocktail Maker</h1>
       </div>
@@ -23,12 +24,11 @@ import CocktailNavView from './views/CocktailNavView.vue'
 </template>
 
 <style>
-.bigColl{
-    visibility: collapse;
-  }
+.bigColl {
+  visibility: collapse;
+}
 
 @media (min-width: 798px) {
-  
   .bigBlk {
     display: block;
   }
