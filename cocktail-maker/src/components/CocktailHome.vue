@@ -2,43 +2,39 @@
 import { ref } from 'vue'
 import axios from 'axios'
 
-const searchQuery = ref('')
-const queryTO = ref(null)
-const mapBoxResults = ref(null)
-var resTest = []
-const ingrdientRequest = {
-  method: 'GET',
-  url: 'https://the-cocktail-db.p.rapidapi.com/filter.php',
-  params: { i: searchQuery.value },
-  headers: {
-    'X-RapidAPI-Key': '5d8736a878mshc87d50db9f74807p10f351jsn92deba2aae08',
-    'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
-  }
-}
+const searchQuery = ref('') //variable des stockage des sentré --> ne renvoie pas la bonne valeur dans le get
+const queryTO = ref(null) //Timeout entre les entré et les recherches
+const mapBoxResults = ref(null) //var de recuperation des reponses
+var resTest = ref([]) // liste de recuperation des resulat
 
 const getCocktailByIngredient = () => {
-  console.log(searchQuery.value)
+  resTest.value = []
+  const ingrdientRequest = {
+    method: 'GET',
+
+    url: 'https://www.thecocktaildb.com/api/json/v1/1/filter.php',
+    params: { i: searchQuery.value }
+  }
   clearTimeout(queryTO.value)
   queryTO.value = setTimeout(async () => {
     try {
       if (searchQuery.value !== '') {
         const response = await axios.request(ingrdientRequest)
-        /* const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php/${searchQuery.value}.json') */
         mapBoxResults.value = response.data
-        resTest.push(mapBoxResults.value)
-        console.log(resTest)
+        resTest.value = mapBoxResults.value.drinks
+        console.log(resTest.value)
         return
       }
       mapBoxResults.value = null
     } catch (error) {
       console.error(error)
     }
-  }, 3000)
+  }, 1000)
 }
 </script>
 
 <template>
-  <main class="flex h-screen justify-center pt-8">
+  <main class="h-screen pt-8">
     <div class="">
       <input
         type="text"
@@ -47,6 +43,14 @@ const getCocktailByIngredient = () => {
         @input="getCocktailByIngredient"
         class="h-[60px] w-[321px] rounded-[20px] border-4 border-black bg-zinc-300 text-2xl focus:border-[#1471C2] focus:shadow-[0px_1px_0_0_#004E71] focus:outline-none"
       />
+    </div>
+    <div class="list-item">
+      <ul v-for="(drink, index) in resTest" :key="(index = drink.idDrink)<10" class="">
+        <li class=" ">
+          {{ drink.strDrink }}
+          <!-- <img :src="drink.strDrinkThumb" :alt="drink.strDrinkThumb" class="w-2 h-2" /> -->
+        </li>
+      </ul>
     </div>
   </main>
 </template>

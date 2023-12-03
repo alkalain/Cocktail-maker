@@ -3,7 +3,7 @@ import CocktailHome from '../components/CocktailHome.vue'
 </script>
 
 <template>
-  <main>
+  <main class="flex justify-center">
     <CocktailHome />
   </main>
 </template>
