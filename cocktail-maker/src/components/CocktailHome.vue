@@ -11,9 +11,20 @@ const queryTO = ref(null) //Timeout entre les entré et les recherches
 const mapBoxResults = ref(null) //var de recuperation des reponses
 var resTest = ref([]) // liste de recuperation des resulat
 
+//display the cocktail
+const cocktailRecepieResult = ref(null)
+var selectedCocktailCategory = ref('')
+var selectedCocktailInstructions = ref('')
+var selectedCocktailImage = ref('')
+//props var
+var sCC = ''
+var sCI = ''
+var sCImg=''
+var getCBNDef = false
+
 var rscActivated = ref(false)
-const toggleRscActivated = () => {
-  rscActivated.value = !rscActivated.value
+const toggleRscActivated = (boolean) => {
+  rscActivated.value = boolean
 }
 
 const getCocktailByIngredient = () => {
@@ -41,10 +52,6 @@ const getCocktailByIngredient = () => {
     }
   }, 1000)
   //display the cocktail
-  const cocktailRecepieResult = ref(null)
-  const selectedCocktailCategory = ref('')
-  const selectedCocktailInstructions = ref('')
-
   const getCocktailByName = () => {
     const cocktailRequest = {
       method: 'GET',
@@ -57,14 +64,15 @@ const getCocktailByIngredient = () => {
         if (selectedCocktail.value !== '') {
           const response = await axios.request(cocktailRequest)
           cocktailRecepieResult.value = response.data
-          console.log(response)
 
           apiData.value = cocktailRecepieResult.value.drinks
           const firstDrink = apiData.value[0]
-          selectedCocktailCategory.value = firstDrink.strCategory.value
-          selectedCocktailInstructions.value = firstDrink.strInstructions.value
-          console.log(selectedCocktailCategory)
-          console.log(selectedCocktailInstructions)
+          selectedCocktailCategory.value = firstDrink.strCategory
+          selectedCocktailInstructions.value = firstDrink.strInstructions
+          selectedCocktailImage.value = firstDrink.strDrinkThumb	
+          sCC = selectedCocktailCategory.value
+          sCI = selectedCocktailInstructions.value
+          sCImg = selectedCocktailImage.value
           return
         }
       } catch (error) {
@@ -72,32 +80,37 @@ const getCocktailByIngredient = () => {
       }
     }, 100)
   }
+
   watch(selectedCocktail, (newVal) => {
+    getCBNDef = !getCBNDef
     getCocktailByName(newVal)
   })
 }
 </script>
 
 <template>
-  <main class="h-screen pt-8">
-    <div class="">
+  <main class=" h-screen pt-8 flex flex-wrap space-x-0 justify-center">
+    <div
+      @mouseover="toggleRscActivated(true)"
+      @mouseleave="toggleRscActivated(false)"
+      class="flex h-[70px] w-full justify-center focus:h-auto focus:w-auto"
+    >
       <input
         type="text"
         placeholder="Nom d'ingrédiant"
         v-model="searchQuery"
         @input="getCocktailByIngredient"
-        @click="toggleRscActivated"
-        class="h-[60px] w-[321px] rounded-[20px] border-4 border-black bg-zinc-300 text-2xl focus:rounded-b-[0px] focus:rounded-t-[20px] focus:border-b-0 focus:border-[#1471C2] focus:shadow-[0px_1px_0_0_#004E71] focus:outline-none"
+        class="h-[60px] w-[321px] rounded-[20px] border-4 border-black bg-zinc-300 text-2xl hover:rounded-b-[0px] hover:rounded-t-[20px] focus:rounded-b-[0px] focus:rounded-t-[20px] focus:border-b-0 focus:border-[#1471C2] focus:shadow-[0px_1px_0_0_#004E71] focus:outline-none"
       />
-    </div>
-    <div class="list-none rounded-[20px]" v-show="rscActivated">
+      <!-- class="flex max-h-80 w-[321px] list-none grid-rows-6 flex-wrap overflow-y-scroll rounded-b-[10px]" -->
       <ul
-        class="flex max-h-80 w-[321px] list-none grid-rows-6 flex-wrap overflow-y-scroll rounded-b-[10px]"
+        class="absolute top-[189px] max-h-80 w-[313px] overflow-y-scroll rounded-b-[10px] border-x-2 border-black bg-zinc-300 text-lg"
+        v-show="rscActivated"
       >
         <li
           v-for="(drink, index) in resTest"
-          :key="(index = drink.idDrink) < 10"
-          class="grid grid-cols-6 border-x-4 border-y-[1px] border-black text-lg hover:border-[#1471C2]"
+          :key="(index = drink.idDrink)"
+          class="grid grid-cols-6 border-x-2 border-y-[1px] border-black text-lg hover:border-[#1471C2]"
         >
           <button
             class="col-span-5 flex items-center border-r-2 border-r-black pl-1 hover:border-r-[#1471C2]"
@@ -111,11 +124,12 @@ const getCocktailByIngredient = () => {
         </li>
       </ul>
     </div>
-    <div>
+    <div class="flex h-[70%] w-[70%] justify-center border-4  border-red-700 text-lg ">
       <CocktailPresentation
         :cocktailName="selectedCocktail"
-        :cocktailCategory="selectedCocktailCategory"
-        :cocktailInstructions="selectedCocktailInstructions"
+        :cocktailCathegory="sCC"
+        :cocktailDescription="sCI"
+        :cocktailImage="sCImg"
       />
     </div>
   </main>

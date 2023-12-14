@@ -540,6 +540,14 @@ video {
   visibility: collapse;
 }
 
+.absolute{
+  position: absolute;
+}
+
+.top-\[189px\]{
+  top: 189px;
+}
+
 .col-span-1{
   grid-column: span 1 / span 1;
 }
@@ -576,6 +584,14 @@ video {
   height: 60px;
 }
 
+.h-\[70\%\]{
+  height: 70%;
+}
+
+.h-\[70px\]{
+  height: 70px;
+}
+
 .h-screen{
   height: 100vh;
 }
@@ -592,8 +608,24 @@ video {
   width: 8rem;
 }
 
+.w-\[10\%\]{
+  width: 10%;
+}
+
+.w-\[313px\]{
+  width: 313px;
+}
+
 .w-\[321px\]{
   width: 321px;
+}
+
+.w-\[70\%\]{
+  width: 70%;
+}
+
+.w-full{
+  width: 100%;
 }
 
 .w-screen{
@@ -632,6 +664,12 @@ video {
   justify-content: center;
 }
 
+.space-x-0 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0px * var(--tw-space-x-reverse));
+  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .space-x-3 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
   margin-right: calc(0.75rem * var(--tw-space-x-reverse));
@@ -655,9 +693,9 @@ video {
   border-width: 4px;
 }
 
-.border-x-4{
-  border-left-width: 4px;
-  border-right-width: 4px;
+.border-x-2{
+  border-left-width: 2px;
+  border-right-width: 2px;
 }
 
 .border-y-\[1px\]{
@@ -672,6 +710,11 @@ video {
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.border-red-700{
+  --tw-border-opacity: 1;
+  border-color: rgb(185 28 28 / var(--tw-border-opacity));
 }
 
 .border-zinc-300{
@@ -732,6 +775,16 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.hover\:rounded-b-\[0px\]:hover{
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.hover\:rounded-t-\[20px\]:hover{
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
 .hover\:border-\[\#1471C2\]:hover{
   --tw-border-opacity: 1;
   border-color: rgb(20 113 194 / var(--tw-border-opacity));
@@ -740,6 +793,14 @@ video {
 .hover\:border-r-\[\#1471C2\]:hover{
   --tw-border-opacity: 1;
   border-right-color: rgb(20 113 194 / var(--tw-border-opacity));
+}
+
+.focus\:h-auto:focus{
+  height: auto;
+}
+
+.focus\:w-auto:focus{
+  width: auto;
 }
 
 .focus\:rounded-b-\[0px\]:focus{
