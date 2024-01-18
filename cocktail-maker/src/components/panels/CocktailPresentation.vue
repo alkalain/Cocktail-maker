@@ -1,11 +1,17 @@
 <template>
   <div class="flex justify-between">
-    <div class="flex flex-col rounded-2xl border-4 border-yellow-700 text-2xl bg-zinc-100">
-      <div class="flex h-[70%] w-full flex-row">
-        <div class="flex w-[30%] justify-start border-r-[1px] border-yellow-700">
-          <img :src="cocktailImage" :alt="cocktailName" class="flex  items-center justify-center object-cover rounded-ss-xl" />
+    <div
+      class="rounded-2xl border-4 border-yellow-700 bg-zinc-100 text-2xl md:flex md:flex-col"
+    >
+      <div class="flex w-full flex-col md:h-[70%] md:flex-row">
+        <div class="flex justify-start border-yellow-700 md:w-[30%] md:border-r-[1px]">
+          <img
+            :src="cocktailImage"
+            :alt="cocktailName"
+            class="flex items-center justify-center rounded-t-xl object-cover md:rounded-se-none md:rounded-ss-xl"
+          />
         </div>
-        <div class="flex w-[40%] flex-col border-x-[1px] border-yellow-700 pl-1">
+        <div class="flex flex-col border-b-[1px] border-yellow-700 pl-1 md:w-[40%] md:border-x-[1px]">
           <p class="pb-2"><b>le nom :</b> {{ cocktailName }}</p>
           <p class="pb-2"><b>categorie :</b> {{ cocktailCathegory }}</p>
         </div>
@@ -24,7 +30,7 @@
         </div>
       </div>
 
-      <div class="h-[30%] overflow-y-scroll outline-none scrollbar-hidden">
+      <div class="scrollbar-hidden h-full overflow-y-scroll outline-none md:h-[30%]">
         <p class="border-t-2 border-yellow-700"><b>procedure :</b> {{ cocktailDescription }}</p>
       </div>
     </div>
@@ -57,8 +63,4 @@ defineProps({
   console.log(cocktailIngredient)
 } */
 </script>
-<style>
-.scrollbar-hidden {
-  scrollbar-width: none;
-}
-</style>
+<style></style>

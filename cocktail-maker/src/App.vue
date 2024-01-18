@@ -8,7 +8,7 @@ import CocktailNavView from './views/CocktailNavView.vue'
   <header class="flex items-center">
     <div class="max-[767]:grid-rows-2 grid w-screen items-center bg-yellow-700 md:grid-cols-2">
       <div class="flex justify-start">
-        <h1 class="font-['Italianno'] text-8xl text-white md:text-8xl">Cocktail Maker</h1>
+        <h1 class="font-['Italianno'] text-7xl text-white md:text-7xl">Cocktail Maker</h1>
       </div>
 
       <div class="hidden md:block">
@@ -23,19 +23,4 @@ import CocktailNavView from './views/CocktailNavView.vue'
   <RouterView />
 </template>
 
-<style>
-.bigColl {
-  visibility: collapse;
-}
-
-@media (min-width: 798px) {
-  .bigBlk {
-    display: block;
-  }
-}
-@media (min-width: none) {
-  .smallBlk {
-    display: block;
-  }
-}
-</style>
+<style></style>

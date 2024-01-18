@@ -2,3 +2,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities {
+  .scrollbar-hidden {
+    scrollbar-width: none;
+  }
+  .bigColl {
+    visibility: collapse;
+  }
+
+  @media (min-width: 798px) {
+    .bigBlk {
+      display: block;
+    }
+  }
+  @media (min-width: none) {
+    .smallBlk {
+      display: block;
+    }
+  }
+}

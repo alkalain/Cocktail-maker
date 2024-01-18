@@ -215,11 +215,11 @@ const getCocktailByIngredient = () => {
 </script>
 
 <template>
-  <main class="flex h-screen flex-wrap justify-center space-x-0 pt-8">
+  <main class="flex flex-wrap justify-center space-x-0 pt-8 md:h-screen">
     <div
       @mouseover="toggleRscActivated(true)"
       @mouseleave="toggleRscActivated(false)"
-      class="flex h-[70px] w-full justify-center focus:h-auto focus:w-auto"
+      class="flex h-[70px] w-full justify-center focus:h-auto focus:w-auto md:flex-auto"
     >
       <input
         type="text"
@@ -230,7 +230,7 @@ const getCocktailByIngredient = () => {
       />
       <!-- class="flex max-h-80 w-[321px] list-none grid-rows-6 flex-wrap overflow-y-scroll rounded-b-[10px]" -->
       <ul
-        class="absolute top-[189px] max-h-80 w-[313px] overflow-y-scroll rounded-b-[10px] border-x-2 border-black bg-zinc-300 text-lg"
+        class=" absolute top-40 max-h-80 w-[313px] overflow-y-scroll rounded-b-[10px] border-x-2 border-black bg-zinc-300 text-lg md:top-[160px]"
         v-show="rscActivated"
       >
         <li
@@ -250,7 +250,7 @@ const getCocktailByIngredient = () => {
         </li>
       </ul>
     </div>
-    <div class="flex h-[70%] w-[70%] justify-center align-top text-lg">
+    <div class="flex h-full w-[90%] justify-center align-top text-lg md:h-[70%] md:w-[70%]">
       <CocktailPresentation
         :cocktailName="selectedCocktail"
         :cocktailCathegory="sCC"
@@ -263,8 +263,4 @@ const getCocktailByIngredient = () => {
   </main>
 </template>
 
-<style>
-.scrollbarr {
-  scrollbar-width: 1px;
-}
-</style>
+<style></style>
