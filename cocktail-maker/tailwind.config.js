@@ -17,4 +17,8 @@ export const theme = {
     md: "768px",
   }
 };
-export const plugins = []; 
+export const plugins = [
+  
+  // eslint-disable-next-line no-undef
+ // require('@tailwindcss/container-queries'),
+]; 

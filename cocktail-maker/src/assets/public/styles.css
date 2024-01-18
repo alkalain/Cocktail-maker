@@ -544,8 +544,44 @@ video {
   position: absolute;
 }
 
+.relative{
+  position: relative;
+}
+
+.left-0{
+  left: 0px;
+}
+
+.left-\[246px\]{
+  left: 246px;
+}
+
+.left-\[54px\]{
+  left: 54px;
+}
+
+.left-\[7\.75px\]{
+  left: 7.75px;
+}
+
 .top-\[189px\]{
   top: 189px;
+}
+
+.top-\[1px\]{
+  top: 1px;
+}
+
+.top-\[317px\]{
+  top: 317px;
+}
+
+.top-\[323px\]{
+  top: 323px;
+}
+
+.top-\[3px\]{
+  top: 3px;
 }
 
 .col-span-1{
@@ -580,6 +616,18 @@ video {
   height: 3.5rem;
 }
 
+.h-\[0px\]{
+  height: 0px;
+}
+
+.h-\[30\%\]{
+  height: 30%;
+}
+
+.h-\[317px\]{
+  height: 317px;
+}
+
 .h-\[60px\]{
   height: 60px;
 }
@@ -608,16 +656,36 @@ video {
   width: 8rem;
 }
 
-.w-\[10\%\]{
-  width: 10%;
+.w-\[200px\]{
+  width: 200px;
+}
+
+.w-\[30\%\]{
+  width: 30%;
+}
+
+.w-\[312px\]{
+  width: 312px;
 }
 
 .w-\[313px\]{
   width: 313px;
 }
 
+.w-\[321\.26px\]{
+  width: 321.26px;
+}
+
 .w-\[321px\]{
   width: 321px;
+}
+
+.w-\[325px\]{
+  width: 325px;
+}
+
+.w-\[40\%\]{
+  width: 40%;
 }
 
 .w-\[70\%\]{
@@ -630,6 +698,24 @@ video {
 
 .w-screen{
   width: 100vw;
+}
+
+.origin-top-left{
+  transform-origin: top left;
+}
+
+.rotate-\[-79\.65deg\]{
+  --tw-rotate: -79.65deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.rotate-\[80\.25deg\]{
+  --tw-rotate: 80.25deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scroll-m-0{
+  scroll-margin: 0px;
 }
 
 .list-none{
@@ -648,6 +734,10 @@ video {
   flex-direction: row;
 }
 
+.flex-col{
+  flex-direction: column;
+}
+
 .flex-wrap{
   flex-wrap: wrap;
 }
@@ -662,6 +752,10 @@ video {
 
 .justify-center{
   justify-content: center;
+}
+
+.justify-between{
+  justify-content: space-between;
 }
 
 .space-x-0 > :not([hidden]) ~ :not([hidden]){
@@ -680,6 +774,10 @@ video {
   overflow-y: scroll;
 }
 
+.rounded-2xl{
+  border-radius: 1rem;
+}
+
 .rounded-\[20px\]{
   border-radius: 20px;
 }
@@ -687,6 +785,10 @@ video {
 .rounded-b-\[10px\]{
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+
+.rounded-ss-xl{
+  border-start-start-radius: 0.75rem;
 }
 
 .border-4{
@@ -698,13 +800,30 @@ video {
   border-right-width: 2px;
 }
 
+.border-x-\[1px\]{
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+
 .border-y-\[1px\]{
   border-top-width: 1px;
   border-bottom-width: 1px;
 }
 
+.border-l-\[1px\]{
+  border-left-width: 1px;
+}
+
 .border-r-2{
   border-right-width: 2px;
+}
+
+.border-r-\[1px\]{
+  border-right-width: 1px;
+}
+
+.border-t-2{
+  border-top-width: 2px;
 }
 
 .border-black{
@@ -712,9 +831,14 @@ video {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
-.border-red-700{
+.border-neutral-600{
   --tw-border-opacity: 1;
-  border-color: rgb(185 28 28 / var(--tw-border-opacity));
+  border-color: rgb(82 82 82 / var(--tw-border-opacity));
+}
+
+.border-yellow-700{
+  --tw-border-opacity: 1;
+  border-color: rgb(161 98 7 / var(--tw-border-opacity));
 }
 
 .border-zinc-300{
@@ -732,9 +856,23 @@ video {
   background-color: rgb(161 98 7 / var(--tw-bg-opacity));
 }
 
+.bg-zinc-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 244 245 / var(--tw-bg-opacity));
+}
+
 .bg-zinc-300{
   --tw-bg-opacity: 1;
   background-color: rgb(212 212 216 / var(--tw-bg-opacity));
+}
+
+.object-cover{
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.pb-2{
+  padding-bottom: 0.5rem;
 }
 
 .pl-1{
@@ -743,6 +881,10 @@ video {
 
 .pt-8{
   padding-top: 2rem;
+}
+
+.align-top{
+  vertical-align: top;
 }
 
 .font-\[\'Italianno\'\]{
@@ -773,6 +915,11 @@ video {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.outline-none{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .hover\:rounded-b-\[0px\]:hover{
