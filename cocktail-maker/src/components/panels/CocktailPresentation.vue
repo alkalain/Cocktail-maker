@@ -1,8 +1,6 @@
 <template>
   <div class="flex justify-between">
-    <div
-      class="rounded-2xl border-4 border-yellow-700 bg-zinc-100 text-2xl md:flex md:flex-col"
-    >
+    <div class="rounded-2xl border-4 border-yellow-700 bg-zinc-100 text-2xl md:flex md:flex-col">
       <div class="flex w-full flex-col md:h-[70%] md:flex-row">
         <div class="flex justify-start border-yellow-700 md:w-[30%] md:border-r-[1px]">
           <img
@@ -11,7 +9,9 @@
             class="flex items-center justify-center rounded-t-xl object-cover md:rounded-se-none md:rounded-ss-xl"
           />
         </div>
-        <div class="flex flex-col border-b-[1px] border-yellow-700 pl-1 md:w-[40%] md:border-x-[1px]">
+        <div
+          class="flex flex-col border-b-[1px] border-yellow-700 pl-1 md:w-[40%] md:border-x-[1px]"
+        >
           <p class="pb-2"><b>le nom :</b> {{ cocktailName }}</p>
           <p class="pb-2"><b>categorie :</b> {{ cocktailCathegory }}</p>
         </div>
@@ -19,14 +19,21 @@
           class="scrollbar-hidden w-[40%] scroll-m-0 overflow-y-scroll border-l-[1px] border-yellow-700 pl-1 outline-none"
         >
           <p><b>ingrédiants: </b></p>
-          <ul class="">
-            <li
-              v-for="(ingredient, index) in cocktailIngredient"
-              :key="(index = cocktailMesures.value)"
-            >
-              {{ ingredient }} {{ index }}
-            </li>
-          </ul>
+          <div class="flex flex-row">
+            <ul class="">
+              <li
+                v-for="(ingredient, index) in cocktailIngredient"
+                :key="(index = cocktailIngredient.index)"
+              >
+                {{ ingredient }}
+              </li>
+            </ul>
+            <ul>
+              <li v-for="(mesure, index) in cocktailMesures" :key="index">
+                {{ mesure }}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 

@@ -230,7 +230,7 @@ const getCocktailByIngredient = () => {
       />
       <!-- class="flex max-h-80 w-[321px] list-none grid-rows-6 flex-wrap overflow-y-scroll rounded-b-[10px]" -->
       <ul
-        class=" absolute top-40 max-h-80 w-[313px] overflow-y-scroll rounded-b-[10px] border-x-2 border-black bg-zinc-300 text-lg md:top-[160px]"
+        class="absolute top-[188px] max-h-80 w-[313px] overflow-y-scroll rounded-b-[10px] border-x-2 border-black bg-zinc-300 text-lg md:top-[170px]"
         v-show="rscActivated"
       >
         <li
