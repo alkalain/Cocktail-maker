@@ -18,7 +18,7 @@
         <div
           class="scrollbar-hidden w-[40%] scroll-m-0 overflow-y-scroll border-l-[1px] border-yellow-700 pl-1 outline-none"
         >
-          <p><b>ingrédiants: </b></p>
+          <p><b>ingredient: </b></p>
           <div class="flex flex-row">
             <ul class="">
               <li
@@ -28,7 +28,7 @@
                 {{ ingredient }}
               </li>
             </ul>
-            <ul>
+            <ul class="hidden">
               <li v-for="(mesure, index) in cocktailMesures" :key="index">
                 {{ mesure }}
               </li>
@@ -38,7 +38,7 @@
       </div>
 
       <div class="scrollbar-hidden h-full overflow-y-scroll outline-none md:h-[30%]">
-        <p class="border-t-2 border-yellow-700"><b>procedure :</b> {{ cocktailDescription }}</p>
+        <p class="border-t-2 border-yellow-700"><b>Instructions : </b> {{ cocktailDescription }}</p>
       </div>
     </div>
     <!-- <div class="w-[312px] h-[317px] relative">

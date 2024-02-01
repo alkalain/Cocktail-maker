@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import CocktailHomeView from '../views/CocktailHomeView.vue'
+import CocktailHomeNameView from '../views/CocktailHomeNameView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,6 +9,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: CocktailHomeView
+    },
+    {
+      path: '/name',
+      name: 'name',
+      component: CocktailHomeNameView
     },
     {
       path: '/about',

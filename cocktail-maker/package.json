@@ -14,6 +14,8 @@
     "build-css": "tailwindcss build src/assets/main.css -o src/assets/public/styles.css "
   },
   "dependencies": {
+    "@vueuse/components": "^10.7.2",
+    "@vueuse/core": "^10.7.2",
     "axios": "^1.6.2",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"

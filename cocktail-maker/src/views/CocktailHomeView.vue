@@ -1,9 +1,9 @@
 <script setup>
-import CocktailHome from '../components/CocktailHome.vue'
+import CocktailIngredientSearch from '../components/CocktailIngredientSearch.vue'
 </script>
 
 <template>
   <main class="flex justify-center">
-    <CocktailHome />
+    <CocktailIngredientSearch />
   </main>
 </template>
